@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions
+	xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+	xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ns1="http://www.jboss.org/drools" id="_fpbVUESsEeuPSqUp8HCc4g"
+	exporter="org.eclipse.bpmn2.modeler.core"
+	exporterVersion="1.5.2.SNAPSHOT-v20200602-1600-B1"
+	targetNamespace="http://org.eclipse.bpmn2/default/process">
+</bpmn2:definitions>

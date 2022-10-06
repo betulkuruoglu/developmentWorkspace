@@ -1,0 +1,8 @@
+public refines class Main {
+	public void print() {
+		Super().print();
+		System.out.println("- WhiteBoard");
+		XMLFileOperations.addFeature("processes/WhiteBoard/DiffWhiteBoard.xml", 
+				Super().getBPMNPath()+"Webinar.bpmn"); 
+	}
+}

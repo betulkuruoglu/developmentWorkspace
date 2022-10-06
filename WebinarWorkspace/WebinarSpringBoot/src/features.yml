@@ -1,0 +1,7 @@
+---
+static:
+  features:
+  - feature: "passPresenter"
+    status: 1
+  - feature: "chatMessaging"
+    status: 1

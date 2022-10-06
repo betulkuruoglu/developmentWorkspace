@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions
+	xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+	xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+	xmlns:ns1="http://www.jboss.org/drools"
+	id="_fpbVUESsEeuPSqUp8HCc4g" exporter="org.eclipse.bpmn2.modeler.core"
+	exporterVersion="1.5.2.SNAPSHOT-v20200602-1600-B1"
+	targetNamespace="http://org.eclipse.bpmn2/default/process">
+	<bpmn2:process>
+		<bpmn2:scriptTask id="ScriptTask_16"
+			name="Enable Chat Messaging" scriptFormat="http://www.java.com/java">
+			<bpmn2:extensionElements>
+				<ns1:metaData name="elementname">
+					<ns1:metaValue><![CDATA[Enable Chat Messaging]]></ns1:metaValue>
+				</ns1:metaData>
+			</bpmn2:extensionElements>
+			<bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
+			<bpmn2:outgoing>SequenceFlow_35</bpmn2:outgoing>
+			<bpmn2:script>RestClientCalls.callService("http://localhost:8080/chatMessaging");
+			</bpmn2:script>
+		</bpmn2:scriptTask>
+		<bpmn2:sequenceFlow id="SequenceFlow_35"
+			sourceRef="ScriptTask_16" targetRef="ParallelGateway_4" />
+		<bpmn2:sequenceFlow id="SequenceFlow_14"
+			sourceRef="ParallelGateway_1" targetRef="ScriptTask_16" />
+	</bpmn2:process>
+	<bpmndi:BPMNDiagram>
+		<bpmndi:BPMNPlane>
+			<bpmndi:BPMNShape id="BPMNShape_ScriptTask_16"
+				bpmnElement="ScriptTask_16" isExpanded="true">
+				<dc:Bounds height="50.0" width="110.0" x="1088.0"
+					y="450.0" />
+				<bpmndi:BPMNLabel>
+					<dc:Bounds height="11.0" width="96.0" x="1095.0"
+						y="469.0" />
+				</bpmndi:BPMNLabel>
+			</bpmndi:BPMNShape>
+			<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_14"
+				bpmnElement="SequenceFlow_14"
+				sourceElement="BPMNShape_ParallelGateway_1">
+				<di:waypoint xsi:type="dc:Point" x="1010.0" y="275.0" />
+				<di:waypoint xsi:type="dc:Point" x="1010.0" y="475.0" />
+				<di:waypoint xsi:type="dc:Point" x="1085.0" y="475.0" />
+				<di:waypoint xsi:type="dc:Point" x="1095.0" y="475.0" />
+				<bpmndi:BPMNLabel id="BPMNLabel_23" />
+			</bpmndi:BPMNEdge>
+			<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_35"
+				bpmnElement="SequenceFlow_35"
+				sourceElement="BPMNShape_ScriptTask_16"
+				targetElement="BPMNShape_ParallelGateway_4">
+				<di:waypoint xsi:type="dc:Point" x="1198.0" y="475.0" />
+				<di:waypoint xsi:type="dc:Point" x="1283.0" y="475.0" />
+				<di:waypoint xsi:type="dc:Point" x="1283.0" y="344.0" />
+				<bpmndi:BPMNLabel id="BPMNLabel_52" />
+			</bpmndi:BPMNEdge>
+		</bpmndi:BPMNPlane>
+	</bpmndi:BPMNDiagram>
+</bpmn2:definitions>
+	
+	

@@ -1,0 +1,25 @@
+public class Main {
+	
+	public String getBPMNPath() {
+		return "../WebinarBPMN/src/main/resources/com/sample/process/";
+	}
+	
+	public String getYMLFilePath() {
+		return "../WebinarSpringBoot/src/features.yml";
+	}
+	
+	public void print(){
+		System.out.println("Webinar");
+
+		XMLFileOperations.cleanDirectory(getBPMNPath());
+		XMLFileOperations.copyFile("processes/Webinar/Webinar.bpmn", 
+				getBPMNPath()+"Webinar.bpmn");
+		
+		YMLFileOperations.cleanFeatures(getYMLFilePath());
+		
+	}
+
+	public static void main(String[] args) {
+		new Main().print();
+	} 
+}

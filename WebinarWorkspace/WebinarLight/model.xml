@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="WebinarPlatform">
+			<graphics key="collapsed" value="false"/>
+			<and mandatory="true" name="Webinar">
+				<and mandatory="true" name="Seminars">
+					<feature name="Live"/>
+					<feature name="PreRecord"/>
+					<and mandatory="true" name="Participants">
+						<and mandatory="true" name="UserRoles">
+							<feature mandatory="true" name="ActiveSpeaker"/>
+							<feature mandatory="true" name="Listener"/>
+							<feature name="PassPresenter"/>
+						</and>
+					</and>
+					<feature name="WhiteBoard"/>
+				</and>
+				<and mandatory="true" name="UserManagement">
+					<feature mandatory="true" name="Registration"/>
+					<feature mandatory="true" name="LogIn"/>
+				</and>
+				<and name="VirtualRooms">
+					<feature name="WaitingRooms"/>
+					<feature name="BreakOutRooms"/>
+				</and>
+				<and mandatory="true" name="Tools">
+					<graphics key="collapsed" value="false"/>
+					<feature mandatory="true" name="Q_A_"/>
+					<feature name="ChatMessaging"/>
+				</and>
+				<and mandatory="true" name="Platform">
+					<and name="SocialMediaIntegration">
+						<graphics key="collapsed" value="false"/>
+						<feature name="LiveStreaming"/>
+					</and>
+				</and>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<eq>
+				<var>LiveStreaming</var>
+				<var>Live</var>
+			</eq>
+		</rule>
+		<rule>
+			<disj>
+				<var>Live</var>
+				<var>PreRecord</var>
+			</disj>
+		</rule>
+	</constraints>
+</featureModel>

@@ -1,0 +1,13 @@
+public refines class Main {
+	public void print() {
+		Super().print();
+		System.out.println("- Pass Presenter");
+		XMLFileOperations.addFeature("processes/PassPresenter/DiffPassPresenter.xml", 
+				Super().getBPMNPath()+"Webinar.bpmn"); 
+		
+		YMLFileOperations.addStatus(getYMLFilePath(), "passPresenter", 1);
+
+//		XMLFileOperations.copyFile("processes/PassPresenter/PassPresenter.bpmn", 
+//				Super().getBPMNPath()+"PassPresenter.bpmn");
+	}
+}
